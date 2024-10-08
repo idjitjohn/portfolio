@@ -1,0 +1,78 @@
+const stacks = {
+  tools: [
+    {name: "AWS", desc: "Amazon AWS", level: 5, icon: require('./aws.svg').default},
+    {name: "Firebase", level: 5, icon: require('./firebase.svg').default},
+    {name: "GCP", level: 5, icon: require('./gcp.svg').default},
+    {name: "NodeJS", desc: "node js, nodejs, node.js", level: 6, icon: require('./nodejs.svg').default},
+  ].sort(({level: l1}, {level: l2}) => l1 > l2 ? -1 : 1),
+  langs: [
+    {name: 'Typescript', level: 6, icon: require('./ts.svg').default},
+    {name: 'PHP', level: 5, icon: require('./php.svg').default},
+    {name: 'C++', level: 5, icon: require('./c++.svg').default},
+    {name: 'Python', level: 4, icon: require('./python.svg').default},
+    {name: 'Kotlin', level: 6, icon: require('./kotlin.svg').default},
+    {name: 'Java', level: 5, icon: require('./java.svg').default},
+    {name: 'Swift', level: 4, icon: require('./swift.svg').default},
+  ].sort(({level: l1}, {level: l2}) => l1 > l2 ? -1 : 1),
+  frameworks: [
+    {name: 'React Native', level: 6, icon: require('./reactnative.png')},
+    {name: 'React', desc: "React Js, ReactJs, React.Js", level: 6, icon: require('./react.svg').default},
+    {name: 'Nest', level: 4, icon: require('./nest.svg').default},
+    {name: 'Laravel', level: 5, icon: require('./laravel.svg').default},
+    {name: 'Flask', level: 4, icon: require('./flask.svg').default},
+    {name: 'Tailwind', level: 5, icon: require('./tailwind.svg').default},
+    {name: 'Next', desc: "Next js, next.js, nextjs", level: 6, icon: require('./next.svg').default},
+    {name: 'Recoil', desc: "recoil js, recoil.js, recoiljs", level: 6, icon: require('./recoiljs.svg').default},
+    {name: 'Electron', desc: "electron.js, electron", level: 6, icon: require('./electron.svg').default},
+    {name: 'Babylon', level: 4, icon: require('./babylon.svg').default},
+    {name: 'Three', desc: "Three.js, three js", level: 6, icon: require('./three.svg').default},
+    {name: 'Sass', desc: "sass, scss", level: 6, icon: require('./sass.svg').default},
+  ].sort(({name: n1}, {name: n2}) => n1 < n2 ? -1 : 1).sort(({level: l1}, {level: l2}) => l1 > l2 ? -1 : 1)
+}
+
+const others = [
+  {name: "Wordpress", desc: "Wordpress", level: 5, icon: require('./wordpress.svg').default},
+  {name: "SEO", desc: "search engine optimization, seo", level: 5, icon: require('./seo.svg').default},
+  {name: "Google Sheets", desc: "Google sheets api", level: 5, icon: require('./sheets.png')},
+  {name: "Stripe", desc: "Stripe API", level: 5, icon: require('./stripe.png')},
+  {name: "Vanilla",desc: "Vanilla pay, vanilla api", level: 5, icon: require('./vanilla.webp')},
+  {name: "D3",desc: "d3.js, d3 js", level: 5, icon: require('./d3.png')},
+  {name: "Brevo",desc: "brevo sendinblue", level: 5, icon: require('./brevo.png')},
+  {name: "Socket.io",desc: "Socket.io, Socket io, Socketio", level: 5, icon: require('./socketio.png')},
+  {name: "Connectycube",desc: "Connectycube", level: 5, icon: require('./connectycube.png')},
+  {name: "Brevo",desc: "brevo sendinblue", level: 5, icon: require('./brevo.png')},
+  {name: "Google Ads", desc: "Google API, Google Ad Words, Google API, Google AdWords", level: 5, icon: require('./google.svg').default},
+  {name: "Graph API", desc: "Facebook Ads, Facebook Graph API", level: 5, icon: require('./fb-graph.svg').default},
+  {name: "Symfony", level: 5, icon: require('./symfony.png')},
+  {name: "CSS", level: 5, icon: require('./css.png')},
+  {name: "React Hook Form", desc: "React Hook Form", level: 5, icon: require('./react-hook-form.png')},
+  {name: "IndexedDB", desc:"IndexedDB, Indexed DB, Indexed-DB", level: 5, icon: require('./indexeddb.png')},
+  {name: "Mongo", desc: "Mongo db, mongo.db, mongodb", level: 6, icon: require('./mongodb.svg').default},
+  {name: "MySQL", level: 6, icon: require('./mysql.svg').default},
+  {name: "UIPath", level: 4, icon: require('./uipath.svg').default},
+  {name: "Android", level: 4, icon: require('./android.webp')},
+  {name: "Git", level: 4, icon: require('./git.webp')},
+  {name: "PostgreSQL", desc: "PostgreSQL", level: 4, icon: require('./postgresql.svg').default},
+  {name: "Spring Boot", desc: "Spring Boot, springboot", level: 4, icon: require('./springboot.png')},
+  {name: "ios", level: 4, icon: require('./ios.png')},
+  {name: 'Javascript', level: 6, icon: require('./js.svg').default},
+  {name: 'Django', level: 4, icon: require('./django.svg').default},
+  {name: 'SQLite', level: 4, icon: require('./sqlite.webp')},
+  {name: 'HTML', desc: "html5", level: 4, icon: require('./html.png')},
+  {name: 'JavaFX', desc: 'Java fx, javafx, java-fx', level: 4, icon: require('./javafx.png')},
+  {name: 'Material UI', level: 5, icon: require('./mui.svg').default},
+  {name: 'Angular', level: 4, icon: require('./angular.svg').default},
+  {name: 'Express JS', level: 6, icon: require('./express.svg').default},
+  {name: 'Vue', desc: "Vue js, vue.js", level: 6, icon: require('./vue.svg').default},
+  {name: 'Visx', desc: "Visx AirBNB", level: 6, icon: require('./visx.svg').default},
+  {name: 'MVola', desc: "MVola Telma, MVola API, Telma Mvola", level: 6, icon: require('./mvola.png')},
+  {name: 'Orange', desc: "Orange, Orange Money, Orange Money API, Orange Money Merchant payment", level: 6, icon: require('./orange-money.jpg')},
+]
+
+export default stacks
+export const allStacks = [
+  ...stacks.frameworks,
+  ...stacks.langs,
+  ...stacks.tools,
+  ...others
+]

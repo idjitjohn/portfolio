@@ -1,0 +1,173 @@
+$max: 720px;
+
+.Project{
+  align-self: center;
+  justify-self: center;
+  --val:  16vw;
+  --bet: 4vw;
+  --color: #fff;
+  width: calc(var(--val) * 5);
+  height: calc(var(--val) * 2.5);
+  display: flex;
+  gap: var(--bet);
+  position: relative;
+  @media screen and (max-width: $max){
+    --val:  16vh;
+    --bet: 4vh;
+    flex-direction: column;
+    width: calc(90vw - 60px);
+    height: calc(var(--val) * 4.8);
+    left: calc(var(--bet) * -.1);
+  }
+  .p-left{
+    flex: 3;
+    display: flex;
+    background: var(--color);
+    border-radius: .5rem 0 .5rem .5rem;
+    position: relative;
+    background-image: var(--image, url(../../../assets/images/test.jpg));
+    background-size: auto 100%;
+    background-position: 0 0;
+    @media screen and (max-width: $max){
+      height: calc(var(--val) * 1.62);
+      background-size: auto calc(calc(var(--val) * 1.62) + var(--bet));
+      border-radius: .7rem .7rem .7rem 0;
+      flex: initial;
+    }
+    &:after{
+      content: '';
+      width: var(--bet);
+      height: 100%;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      clip-path: polygon(-1% 0, 100% 0, 0% calc(100% - .5em), -1% calc(100% - .5em));
+      background-color: inherit;
+      background-image: inherit;
+      background-size: inherit;
+      background-position: calc(var(--val) * -2.773) 0;
+      @media screen and (max-width: $max){
+        background-size: auto calc(calc(var(--val) * 1.62) + var(--bet));
+        clip-path: polygon(0 -1%, calc(100% - .55rem) -1%, 0 99%);
+        background-position: 0 calc(var(--val) * -1.62);
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: var(--bet);
+      }
+    }
+  }
+  .p-right{
+    flex: 2;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5em;
+    padding: 1em;
+    padding-left: 0;
+    border-radius: .5em .5em .5em 0;
+    display: flex;
+    background: var(--color);
+    position: relative;
+    top: calc(var(--bet) / -2);
+    left: calc(var(--bet) / 10);
+    @media screen and (max-width: $max){
+      border-radius: .7rem 0 .7rem .7rem;
+      flex: 3;
+      top: calc(var(--bet) * .1);
+      left: calc(var(--bet) * .2);
+      font-size: 5vw;
+    }
+    &:after{
+      content: '';
+      width: var(--bet);
+      height: 100%;
+      position: absolute;
+      right: 100%;
+      top: 0;
+      clip-path: polygon(101% .5em, 101% 100%, 0 100%, 100% .5em);
+      background: inherit;
+      @media screen and (max-width: $max){
+        clip-path: polygon(.3em 101%, 101% 101%, 101% 0);
+        left: 0;
+        top: auto;
+        bottom: 100%;
+        width: 100%;
+        height: var(--bet);
+      }
+    }
+
+    .company{
+      display: flex;
+      position: relative;
+      justify-content: flex-end;
+      padding-right: calc(.5 * var(--val) + 1em);
+      @media screen and (max-width: $max){
+        // padding-left: .5em;
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: .5em;
+
+        width: calc(.4 * var(--val));
+        height: calc(.4 * var(--val));
+        background-image: var(--logo, url(../../../assets/images/test.jpg));
+        background-size: auto 100%;
+        border-radius: .3em;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: calc(-.25 * var(--val));
+        @media screen and (max-width: $max){
+          z-index: 3;
+        }
+      }
+      span{
+        padding-left: 1em;
+        font-size: .5em;
+        display: none;
+      }
+    }
+    .title{
+      padding-left: .5em;
+      @media screen and (max-width: $max){
+        padding-left: .5em;
+      }
+    }
+    .description{
+      font-size: .5em;
+      margin-left: 1em;
+      font-weight: 300;
+      line-height: 1.5;
+      .desc{
+        margin-bottom: .5em;
+      }
+      .task{
+        &:before{
+          content: "• ";
+        }
+      }
+    }
+    .stacks{
+      display: flex;
+      gap: 1em;
+      justify-content: center;
+      margin-top: 1em;
+      flex-wrap: wrap;
+      @media screen and (max-width: $max){
+        gap: .5em;
+      }
+      .stack{
+        width: calc(.25 * var(--val));
+        height: calc(.25 * var(--val));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 90%;
+        @media screen and (max-width: $max){
+          width: calc(.3 * var(--val));
+          height: calc(.3 * var(--val));
+        }
+      }
+    }
+  }
+}

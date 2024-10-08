@@ -1,0 +1,79 @@
+$max: 380px;
+
+.SnowFall {
+  z-index: 9;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  --height: 100vh;
+  --width: calc(100vw - 60px - 10px);
+  width: var(--width);
+  height: calc(var(--height) - 20px);
+  overflow: hidden;
+  --size: calc(var(--height) / 100 * 9);
+  
+  @media screen and (max-width: $max) {
+    --width: calc(100vw - 45px - 10px);
+  }
+  
+
+  .layer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: calc(var(--height) * 2);
+    left: calc((var(--size) * 1.1) * var(--nb) + var(--size) * .1);
+    height: calc(var(--size) * 1.1 * var(--count) - calc(var(--size) * .1));
+    gap: calc(var(--size) * 0.1);
+    opacity: 0;
+    filter: blur(1vw);
+    animation: infinite-loop 40s linear infinite alternate-reverse;
+    transition: opacity 1s ease, filter .6s ease;
+    &:nth-child(2n + 1){
+      animation-delay: -40s;
+    }
+    &.shown{
+      opacity: .8;
+      filter: none;
+    }
+
+    &:hover {
+      // animation-play-state: paused !important;
+
+    }
+
+    .stack {
+      position: relative;
+      display: flex;
+      width: var(--size);
+      height: var(--size);
+      filter: blur(var(--blur));
+      opacity: 0.8;
+      z-index: var(--z-index);
+      transition: left .5s linear, top .5s cubic-bezier(0, 1, .8, 2.8);
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #fff;
+
+      &:before {
+        position: absolute;
+        content: '';
+        inset: 15%;
+        background-image: var(--icon);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      &.buttoned {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+@keyframes infinite-loop {
+  to { transform: translate3d(0, calc(-100% + var(--height) - var(--size) * .2 ), 0)}
+}

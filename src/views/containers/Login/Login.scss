@@ -1,0 +1,42 @@
+.Login {
+  background: #555;
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+  .side{
+    padding: 2em;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
+    input{
+      font-size: 1.1em;
+      width: 250px;
+      padding: .7em 1em;
+      border: none;
+      border-radius: 2em;
+      outline: none;
+      background: #fff !important;
+      line-height: .5;
+      text-align: center;
+      box-shadow: 0 0 3px #333;
+    }
+    .login-button{
+      font-size: 1.1em;
+      background: dodgerblue;
+      color: #fff;
+      padding: .5em 1.5em;
+      border-radius: 2em;
+      border: none;
+      cursor: pointer;
+      &:hover{
+        background: darken(dodgerblue, 20);
+      }
+      &:active{
+        background: dodgerblue;
+      }
+    }
+  }
+}
