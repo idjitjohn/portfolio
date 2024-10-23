@@ -1,22 +1,30 @@
-$max: 380px;
+$max: 720px;
 
 .SnowFall {
   z-index: 9;
   position: fixed;
   top: 10px;
-  right: 10px;
   --height: 100vh;
   --width: calc(100vw - 60px - 10px);
-  width: var(--width);
   height: calc(var(--height) - 20px);
   overflow: hidden;
   --size: calc(var(--height) / 100 * 9);
+  width: calc(var(--size) * 4.5);
+  left: calc(60px + 10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: .2s ease;
+  &.active {
+    opacity: 1;
+    transition: .5s cubic-bezier(0.655, 0.305, 0.980, -0.155);
+  }
   
   @media screen and (max-width: $max) {
     --width: calc(100vw - 45px - 10px);
+    left: calc((100vw + 45px  ) / 2);
+    transform: translate3d(-50%, 0, 0);
   }
   
-
   .layer {
     display: flex;
     flex-direction: column;
@@ -35,7 +43,7 @@ $max: 380px;
       animation-delay: -40s;
     }
     &.shown{
-      opacity: .8;
+      opacity: 1;
       filter: none;
     }
 

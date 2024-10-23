@@ -1,0 +1,30 @@
+
+$max: 720px;
+
+.Missions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: calc(100vw - 46vh);
+  opacity: 0;
+  pointer-events: none;
+  transition: .2s ease;
+  &.active {
+    opacity: 1;
+    pointer-events: initial;
+    transition: .5s cubic-bezier(0.655, 0.305, 0.980, -0.155);
+  }
+  @media screen and (max-width: $max){
+    width: calc(100vw - 45px);
+    z-index: 1000;
+  }
+  .proj-container{
+    display: flex;
+    align-items: center;
+  }
+}

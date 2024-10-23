@@ -3,7 +3,7 @@ $max: 720px;
 .Project{
   align-self: center;
   justify-self: center;
-  --val:  16vw;
+  --val:  calc((100vw - 50vh) / 5.5) ;
   --bet: 4vw;
   --color: #fff;
   width: calc(var(--val) * 5);

@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './Project.scss'
-import xps from '../../../data/xps'
 import { allStacks } from '../../../data/stacks'
 
 
 
-const Project = () => {
-  const xp = xps.fr[24]
+const Project = ({xp}) => {
   return (
     <div
       className='Project'

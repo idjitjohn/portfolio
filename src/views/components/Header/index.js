@@ -4,6 +4,7 @@ import { useRecoilValue } from 'recoil'
 import { langState } from '../../../atoms'
 import { useState } from 'react'
 import clsx from 'clsx'
+import Thought from '../Thought'
 
 
 const curYear = new Date().getFullYear()
@@ -44,6 +45,7 @@ const Header = () => {
           onClick={() => setPage(p => p + 1)}
         />
       </div>
+      <Thought/>
     </header>
   )
 }

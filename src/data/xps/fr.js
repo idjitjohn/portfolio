@@ -206,14 +206,12 @@ const xps = [
     mission: `Réseau social pour couple et célibataire`,
     image: require('./missions/cheriecheri.png'),
     logo: require('./missions/cheriecheri-logo.png'),
-    techs: 'Amazon AWS, Firebase, Brevo, ConnectyCube, Next.JS, ReactJS, React Native, SASS, Socket.io, Stripe',
+    techs: 'Amazon AWS, Firebase, Brevo, ConnectyCube, ReactJS, React Native, Socket.io, Stripe',
     tasks: [
-      `Création d'un site web et d'une application iOS / Android`,
-      `Intégration de ConnectyCube pour la mise en place d'un système de chat pour la plateforme`,
+      `Création d'une application iOS / Android`,
+      `Mise en place d'un système de messagerie`,
       `Intégration de Stripe pour les payements de crédits et d'abonnements`,
       `Intégration des envoi de notifications mails via SendInBlue`,
-      `Gestion et d'intégration continue sur AWS Cloud`,
-      `Gestion des évènements et rendez-vous`
     ]
   },
   {
@@ -252,11 +250,11 @@ const xps = [
     image: require('./missions/etech.png'),
     logo: require('./missions/etech-logo.webp'),
     mission: 'Développement d’une plateforme de gestion de patrimoine',
-    techs: 'Android, Gcp, iOS, MongoDB, Node.js, ReactJS, React Native, SASS, Socket.io',
+    techs: 'Android, Gcp, iOS, MongoDB, Node.js, ReactJS, React Native, Socket.io',
     tasks: [
-      `Utilisation d'Autodesk View pour des visites virtuelles de maquettes de bâtiments.`,
-      `Création d'un API Node.js en temps réel pour mettre en place un réseau d'appareils connecté (IOT)`,
-      `Mise en place d'une application mobile utilisant une technologie AR de visite virtuelle.`
+      `Visites virtuelles de maquettes de bâtiments en 3D`,
+      `Mise en place d'un réseau d'IOT`,
+      `Mise en place d'une application AR/VR mobile.`
     ]
   },
 

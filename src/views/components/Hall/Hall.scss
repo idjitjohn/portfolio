@@ -8,10 +8,12 @@ $max: 720px;
   background: rgba(255,255,255, .1);
   box-shadow: 0 0 0 1px rgba(255,255,255, .2);
   justify-content: center;
-  transform-origin: 0 100%;
   &.turned{
-    transition: transform 1s cubic-bezier(0.655, 0.305, 0.980, -0.155);
-    transform: rotate(120deg);
+    transition: all .5s cubic-bezier(0.655, 0.305, 0.980, -0.155);
+    // transform: translate3d(100%, 0, 0);
+    filter: blur(2em);
+    pointer-events: none;
+    opacity: .5;
   }
   .popup-wait{
     position: absolute;
@@ -147,77 +149,6 @@ $max: 720px;
             cursor: pointer;
             &:hover:before {
               background: rgba(#fff, .1);
-            }
-          }
-        }
-      }
-      .contact{
-        display: flex;
-        margin: 2em 0 0 0;
-        position: fixed;
-        bottom: 1em;
-        z-index: 1000;
-        .contact-button{
-          text-transform: uppercase;
-          letter-spacing: .1em;
-          padding: .6em 2em;
-          font-size: .6em;
-          border-radius: 2em;
-          border: 1px solid #ddd;
-          background: transparent;
-          color: #fff;
-          font-weight: bold;
-          &:hover{
-            background-color: rgba(#fff, .9);
-            color: $red;
-            border-radius: none;
-          }
-        }
-        .socials{
-          margin-left: 1.5em;
-          display: flex;
-          align-items: center;
-          gap: 1em;
-          a{
-            position: relative;
-            display: flex;
-            background-size: 0;
-            background-position: center;
-            &:before{
-              content: "";
-              pointer-events: none;
-              border-radius: 100%;
-              background: rgba(#fff, .8);
-              inset: 0;
-              position: absolute;
-              transform: scale(.9);
-              transition: .2s;
-            }
-            &:after{
-              content: "";
-              height: 1.5em;
-              width: 1.5em;
-              position: relative;
-              background-size: 50%;
-              background-repeat: no-repeat;
-              background-position: inherit;
-              background-image: inherit;
-            }
-            &:hover{
-              &:before{
-                transform: scale(1.1);
-              }
-            }
-            &.linkedin{
-              background-image: url(../../../assets/icons/linkedin.svg);
-            }
-            &.twitter{
-              background-image: url(../../../assets/icons/x.svg);
-              background-position: 51% 55%;
-            }
-            &.github{
-              background-image: url(../../../assets/icons/github.svg);
-              background-position: 51% 50%;
             }
           }
         }

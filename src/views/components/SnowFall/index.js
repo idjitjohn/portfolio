@@ -1,28 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './SnowFall.scss'
 import { useEffect } from 'react'
 import { allStacks } from '../../../data/stacks'
 import './functions'
+import clsx from 'clsx'
 
-const SnowFall = () => {
+const SnowFall = ({active}) => {
+  const ref = useRef(0)
   useEffect(() => {
-    document.body.addEventListener('click', (e) => {
-      goIt(e.pageX * 100 / window.innerWidth, e.pageY * 100 / window.innerHeight)
-      a = true
-      setTimeout(() => {
-        const hall = document.querySelector('.Hall')
-        // hall.classList.add('turned')
-      }, 1000)
-    })
+    if(!ref.current) goIt()
+      ref.current++
   }, [])
+
   return (
-    <div className='SnowFall'></div>
+    <div className={clsx('SnowFall', {active})}/>
   )
 }
 
 export default SnowFall
-
-let a = false
 
 function shuffle(array) {
   array = [...array]
@@ -35,7 +30,7 @@ function shuffle(array) {
   return array
 }
 
-const goIt = (px, py) => {
+const goIt = () => {
   const container = document.querySelector('.SnowFall')
   const containers = []
   const stacks = allStacks.map((stack) => {
