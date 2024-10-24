@@ -1,0 +1,35 @@
+@import '../../../assets/styles/colors.scss';
+.Lang {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1em;
+  line-height: 1.5;
+  margin-top: .8em;
+  .name{
+    font-size: 1.3em;
+  }
+  .strdetails{
+    .stars{
+      display: flex;
+      .star{
+        width: 1.5em;
+        height: 1.5em;
+        margin-left: .2em;
+        background: $blue;
+        mask-image: url(../../../assets/icons/star.svg);
+        mask-size: 95% auto;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        opacity: .8;
+        &.future{
+          opacity: .4;
+          filter: saturate(.5);
+        }
+      }
+    }
+    .detail{
+      text-align: right;
+      margin: .3em 0;
+    }
+  }
+}

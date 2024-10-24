@@ -1,0 +1,23 @@
+@import '../../../assets/styles/colors.scss';
+
+.Interest {
+  display: flex;
+  align-items: center;
+  margin-top: .8em;
+  margin-left: 1em;
+  .name{
+    font-size: 1.15em;
+  }
+  &:before{
+    content: '';
+    margin-right: 1em;
+    background: var(--color, $blue);
+    mask-image: var(--image);
+    mask-size: 95% auto;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    width: 3.5em;
+    height: 3.5em;
+  }
+}

@@ -23,8 +23,8 @@ const Project = ({xp}) => {
         <div className="description">
           <div className="desc">{xp.mission}</div>
           {
-            xp.tasks.map(task => {
-              return <div className="task">{task}</div>
+            xp.tasks.map((task, i) => {
+              return <div key={task.start + i} className="task">{task}</div>
             })
           }
         </div>
@@ -33,12 +33,14 @@ const Project = ({xp}) => {
             xp.techs.split(', ').map(tech => {
               const stack = allStacks.find(item => (item.desc || item.name).toLocaleLowerCase().includes(tech.toLocaleLowerCase()))
               return stack ? <div
+                key={stack.name}
                 style={{
                   backgroundImage: `url(${stack.icon})`
                 }}
                 className="stack" 
                 title={stack.name}
               /> : <div
+                key={stack.name}
                 style={{
                   // backgroundImage: `url(${stack.icon})`
                 }}

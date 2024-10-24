@@ -14,6 +14,66 @@ $max: 720px;
   opacity: 0;
   pointer-events: none;
   transition: .2s ease;
+  
+  .esc{
+    font-size: .6em;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    @media screen and (max-width: $max){
+      border-radius: 1em;
+      background-color: rgba(#000, .4);
+      padding: 1em 1.5em;
+      backdrop-filter: blur(.5em);
+      span{
+        font-size: 1rem;
+      }
+    }
+    span{
+      transition: transform .2s ease;
+    }
+    &:before{
+      content: '';
+      border: 1px solid #fff;
+      width: .6rem;
+      height: .6rem;
+      transform: rotate(45deg);
+      margin-left: .5em;
+      margin-right: .3em;
+      border-right-width: 0;
+      border-top-width: 0;
+      transition: transform .5s ease;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      height: 1px;
+      left: .7em;
+      right: -.5em;
+      bottom: -.1em;
+      background: #fff;
+      border-radius: 100%;
+      opacity: .5em;
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+    &:hover{
+      &::before{
+        transform: translate3d(-.3em, 0, 0) scale(1.1) rotate(45deg);
+      }
+      &:after{
+        opacity: 1;
+      }
+      > span{
+        transform: scale(1.05);
+      }
+    }
+  }
   &.active {
     opacity: 1;
     pointer-events: initial;

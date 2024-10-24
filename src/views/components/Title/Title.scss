@@ -1,0 +1,21 @@
+@import '../../../assets/styles/colors.scss';
+.Title{
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #888;
+  display: flex;
+  align-items: center;
+
+  margin-top: 1em;
+  &:before{
+    content: '';
+    width: 1.6em;
+    height: 1.6em;
+    margin-right: .5em;
+    background: var(--color, $blue);
+    mask-image: var(--icon, url(../../../assets/icons/youtube.svg));
+    mask-size: 95% auto;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}

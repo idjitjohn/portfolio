@@ -1,18 +1,21 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Thought.scss'
+import { Link } from 'react-router-dom'
 
 const Thought = () => {
   const ref = useRef()
   const target = useRef()
+  const [year, setYear] = useState("")
   useEffect(() => {
     const show = (e) => {
       target.current = e?.target || target.current
       if(target.current.closest('.menu-item.pro')){
+        setYear(target.current.closest('.menu-item.pro').innerText)
         const {y, height} = target.current.getBoundingClientRect()
         const t = ref.current
         t.style.setProperty('--ty', `${y + height / 2 }px`)
         setTimeout(() => show(), 1000)
-        if(e.target){
+        if(e?.target){
           ref.current?.querySelector('.message').focus()
         }
       }
@@ -28,8 +31,13 @@ const Thought = () => {
         <div className="b3"/>
       </div>
       <div className="message" tabIndex={1}>
-        Vous savez quoi? Nous remplirons cette section plus tard. Nous allons travailler sur votre projet d'abord<br/>
-        <div className="resume">Vous voulez mon CV?</div>
+        <span>
+          Vous savez quoi? <span className='strong'>Nous allons travailler sur votre projet d'abord 😉</span>
+        </span>
+        <Link to="/resume">
+          <div className="resume">Allons voir mon CV</div>
+        </Link>
+        <div className="mini">PS: Je remplirai cette section "{year}" plus tard.</div>
       </div>
     </div>
   )

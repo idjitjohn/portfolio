@@ -1,0 +1,29 @@
+@import '../../../assets/styles/colors.scss';
+.Mission {
+  margin-top: 1.2em;
+  line-height: 1.4;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  .start{
+    color: darkgray;
+    line-height: .8;
+    font-size: 1em;
+  }
+  .role{
+    color: #666;
+    font-weight: 500;
+    font-size: .9em;
+    display: none;
+  }
+  .domain{
+    color: $blue;
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+  .techs{
+    display: flex;
+    font-size: .85em;
+    opacity: .9;
+  }
+}

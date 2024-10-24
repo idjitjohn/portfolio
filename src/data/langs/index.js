@@ -1,3 +1,9 @@
+import en from "./en"
+import fr from "./fr"
+import xps from '../xps/en';
+
+const curYear = new Date().getFullYear() + ""
+
 const texts = {
   xt: {
     title: '⎎⎍⌰⌰⌇⏁⏃☊☍ ⎅⟒⎐⟒⌰⍜⌿⌿⟒⍀',
@@ -16,8 +22,9 @@ const texts = {
     askmission: 'My passion will help you pursue your ambitions. Need some help with those stacks?',
     contactme: 'Contact me',
     bestprojs: 'Best projects',
-    numberprojs: '+18 Done',
-    fornow: 'for 2023',
+    numberprojs: `+${xps.length} Done`,
+    fornow: `for ${curYear}`,
+    fornownb: `+${xps.filter(it => it.start.includes(curYear)).length}`
   },
   fr: {
     title: 'Développeur Fullstack',
@@ -26,10 +33,13 @@ const texts = {
     askmission: 'Ma passion vous aidera à poursuivre vos ambitions. Je peux vous aider sur ces Stacks ...',
     contactme: 'Contactez moi',
     bestprojs: 'Top des projets',
-    numberprojs: '+18 Terminés',
-    fornow: 'pour 2023',
+    numberprojs: `+${xps.length} Terminés`,
+    fornow: `pour ${curYear}`,
+    fornownb: `+${xps.filter(it => it.start.includes(curYear)).length}`
   }
 }
 
 
+
 export const getText = (key, lang = 'fr') => texts[lang][key]
+export default {en, fr}

@@ -1,0 +1,47 @@
+@import '../../../assets/styles/colors.scss';
+.DMission {
+  padding: .5em 1em;
+  font-size: .9em;
+  box-sizing: border-box;
+  margin: 0em 0;
+  .start{
+    color: darkgray;
+    line-height: 1;
+    font-size: 1.2em;
+  }
+  .role{
+    color: $blue;
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+  
+
+  .place{
+    color: #555;
+    font-weight: 500;
+    display: flex;
+    span:not(:first-child){
+      font-weight: 600;
+      &:before{
+        content: '';
+        margin: 0 .75em;
+        border-left: 1px solid #444;
+      }
+    }
+    .company{
+      // display: none;
+    }
+  }
+  .tasks{
+    margin: .5em 0;
+    padding-inline-start: 1.5em;
+    li{
+      font-size: .9em;
+    }
+  }
+  .techs{
+    font-weight: 600;
+    font-size: .9em;
+    line-height: 1.3;
+  }
+}

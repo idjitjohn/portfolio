@@ -1,0 +1,43 @@
+@import '../../../assets/styles/colors.scss';
+.Stack {
+  display: flex;
+  margin-top: .5em;
+  width: 20%;
+  &:before{
+    content: '';
+    margin-right: .5em;
+    width: 2.3em;
+    height: 2.3em;
+    background-size: 90% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: var(--icon);
+    filter: grayscale(.7);
+  }
+  .atright{
+    display: flex;
+    flex-direction: column;
+    span{
+      font-size: .9em;
+    }
+    .stars{
+      display: flex;
+      margin-top: .2em;
+      .star{
+        width: .75em;
+        height: .75em;
+        margin-left: .1em;
+        background: $blue;
+        mask-image: url(../../../assets/icons/star.svg);
+        mask-size: 95% auto;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        opacity: .8;
+        &.future{
+          opacity: .4;
+          filter: saturate(.5);
+        }
+      }
+    }
+  }
+}

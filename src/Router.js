@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import Home from './views/containers/Home'
 import Login from './views/containers/Login'
+import Resume from './views/containers/Resume'
 
 const protectedRoutes = [
   // ['/myroute/:params', Component]
@@ -9,6 +10,8 @@ const protectedRoutes = [
 
 const routes = [
   ['/portfolio', Home],
+  ['/', Home],
+  ['/resume', Resume],
   // ['/myroute/:params', Component],
 ].map(([path, component]) => ({ path, component}))
 

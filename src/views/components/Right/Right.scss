@@ -1,0 +1,43 @@
+@import '../../../assets/styles/colors.scss';
+
+.Right{
+  flex: 1;
+  margin-left: 3em;
+  margin-right: 1.5em;
+  padding-top: 3.5em;
+  padding-bottom: 6em;
+  display: flex;
+  flex-direction: column;
+  
+  .more-about{
+    display: flex;
+    flex: 1 0 0;
+    >div{
+      flex: 1;
+      padding-right: 1em;
+    }
+    .Education{
+      --icon: url(../../../assets/icons/diploma.svg)
+    }
+    .Language{
+      --icon: url(../../../assets/icons/language.svg)
+
+    }
+    .Interests{
+      --icon: url(../../../assets/icons/interest.svg)
+    }
+    .Missions{
+      --icon: url(../../../assets/icons/pro.svg)
+    }
+  }
+  .Stacks{
+    .Title{
+      --icon: url(../../../assets/icons/tech.svg)
+    }
+    >div{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: .5em;
+    }
+  }
+}

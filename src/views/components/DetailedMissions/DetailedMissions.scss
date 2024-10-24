@@ -1,0 +1,17 @@
+.DetailedMissions {
+  position: absolute;
+  margin: 3em 1em;
+  gap: .5em;
+  inset: 0;
+  flex-direction: row;
+  display: flex;
+  gap: .5em;
+  flex-wrap: wrap;
+  max-height: 100%;
+  // overflow: hidden;
+  align-content: flex-start;
+  box-sizing: border-box;
+  .DMission{
+    width: calc(50% - 1em);
+  }
+}

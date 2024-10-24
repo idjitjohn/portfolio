@@ -1,0 +1,72 @@
+@import '../../../assets/styles/colors.scss';
+
+.Left {
+  width: 33%;
+  background-color: $blue;
+  background-image: linear-gradient(0deg, transparent, rgba(#fff, 0.3) 40%, rgba(#fff, 0.3) 60%, transparent);
+  display: flex;
+  flex-direction: column;
+  .profile-parent {
+    display: flex;
+    flex-direction: column;
+    .profile {
+      width: 90%;
+      background-color: $blue;
+      border: 0.5em solid $blue;
+      border-radius: .2em;
+      box-shadow: 0 0 50em rgba(#fff, .3);
+      align-self: flex-end;
+      transform: translateX(7%);
+    }
+    &:before,
+    &:after {
+      content: "";
+      background: rgba(#fff, 0.8);
+      margin: 2em;
+      width: 50%;
+      height: 0.25em;
+    }
+    &:after {
+      align-self: flex-end;
+    }
+  }
+  .contacts, .socials {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1.5em;
+    a {
+      text-align: right;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1em;
+      margin: .25em 0;
+      span {
+        font-size: 1.2em;
+      }
+      &.phone {
+        letter-spacing: 0.1em;
+      }
+      &[href]:hover{
+        span{
+          text-decoration: underline;
+        }
+      }
+      &:after{
+        content: '';
+        width: 3em;
+        height: 3em;
+        margin-left: .5em;
+        background-position: center;
+        background-size: 80% auto;
+        background-repeat: no-repeat;
+        background-image: var(--icon, url(../../../assets/icons/youtube.svg));
+      }
+    }
+  }
+  .socials {
+    margin-top: 2em;
+  }
+}

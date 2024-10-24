@@ -1,0 +1,14 @@
+@import '../../../assets/styles/colors.scss';
+.Diploma {
+  margin-top: 1.2em;
+  line-height: 1.5;
+  .year{
+    color: darkgray;
+    line-height: .8;
+  }
+  .name{
+    color: $blue;
+    font-weight: 500;
+    font-size: 1.2em;
+  }
+}

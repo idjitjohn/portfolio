@@ -8,7 +8,7 @@ import { Mousewheel } from 'swiper/modules';
 import xps from '../../../data/xps'
 import clsx from 'clsx'
 
-const Missions = ({active}) => {
+const Missions = ({active, close}) => {
   return (
     <div className={clsx('Missions', {active})}>
       <Swiper
@@ -20,9 +20,10 @@ const Missions = ({active}) => {
         modules={[Mousewheel]}
         onSwiper={(swiper) => console.log(swiper)}
       >
+        <div className="esc" onClick={close}><span>Échap</span></div>
         {
           xps.fr.filter(xp => !!xp.logo).map((xp, i) => {
-            return <SwiperSlide className='proj-container' key={xp.start}><Project xp={xp}/></SwiperSlide>
+            return <SwiperSlide className='proj-container' key={xp.start + i}><Project xp={xp}/></SwiperSlide>
           })
         }
       </Swiper>

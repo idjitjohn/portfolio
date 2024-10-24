@@ -121,6 +121,23 @@ $max: 720px;
           background-size: 70%;
           background-position: center;
           background-repeat: no-repeat;
+
+          &:after{
+            content: var(--name);
+            position: absolute;
+            font-size: .6em;
+            white-space: nowrap;
+            top: 110%;
+            text-align: center;
+            width: 100%;
+            opacity: 0;
+            transform: translate3d(0, -1em, 0);
+            transition: .2s ease;
+          }
+          &:hover:after{
+            opacity: 1;
+            transform: none;
+          }
           &:before{
             content: '';
             position: absolute;
@@ -149,6 +166,9 @@ $max: 720px;
             cursor: pointer;
             &:hover:before {
               background: rgba(#fff, .1);
+            }
+            &:after{
+              font-size: .5em;
             }
           }
         }

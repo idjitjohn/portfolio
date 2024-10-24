@@ -22,7 +22,7 @@ const Hall = () => {
   }, [])
   return (
     <>
-       <div className={clsx("Hall", {turned: mission})} style={{opacity: 0}}>
+       <div className={clsx("Hall", {turned: mission})}>
         <div className="presentation">
           <div className="pr pr-left">
             <div>
@@ -32,10 +32,10 @@ const Hall = () => {
               </div>
               <div className="details">{text('askmission')}</div>
               <div className="stacks sec">
-                <div className="stack node "></div>
-                <div className="stack next"></div>
-                <div className="stack react"></div>
-                <div onClick={() => setMission(true)} className="stack more button"></div>
+                <div style={{'--name': '"React"'}} className="stack react"/>
+                <div style={{'--name': '"Next"'}} className="stack next"/>
+                <div style={{'--name': '"Node"'}} className="stack node "/>
+                <div style={{'--name': '"See more..."'}} onClick={() => setMission(true)} className="stack more button"></div>
               </div>
             </div>
           </div>
@@ -43,13 +43,13 @@ const Hall = () => {
             <div className="projects">
               <div className="p-proj">{text('bestprojs')}</div>
               <div className="count">{text('numberprojs')}</div>
-              <div className="thisyear"><span>+5</span> {text('fornow')}</div>
+              <div className="thisyear"><span>{text('fornownb')}</span> {text('fornow')}</div>
             </div>
           </div>
         </div>
       </div>
       {<SnowFall active={mission}/>}
-      {<Missions active={mission}/>}
+      {<Missions active={mission} close={() => setMission(false)}/>}
       <Contact/>
     </>
   )

@@ -1,0 +1,58 @@
+.Page {
+  background: #fff;
+  width: 80%;
+  box-shadow: 0 0 .5em rgba(#000, .1);
+  border-radius: .5em;
+  overflow: hidden;
+  font-size: 1vw;
+  position: relative;
+  @media print{
+    width: 100%;
+    box-shadow: none;
+    font-size: 1.25vw;
+
+    clear: both;
+    page-break-inside: avoid
+  }
+  &:after{
+    content: '';
+    display: block;
+    padding-top: 141.2%;
+  }
+  >.container{
+    position: absolute;
+    inset: 0;
+    display: flex;
+  }
+  &.with-tree{
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; height: 30%;
+      background-size: 120% auto;
+      background-position: 50% 100%;
+      opacity: .08;
+      background-image: url(../../../assets/images/tree1.png);
+    }
+    .container:before{
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      right: 0; height: 20%;
+      background-size: 105% auto;
+      background-position: 50% 100%;
+      opacity: .03;
+      background-image: url(../../../assets/images/tree0.png);
+    }
+  }
+}
+@page
+{ 
+  margin: 0 0 0 0;  
+}
+* {
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}

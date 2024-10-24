@@ -7,6 +7,10 @@
   font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden;
   font-size: 2vw;
+
+  position: fixed;
+  overflow: hidden;
+  inset: 0;
   .button{
     transition: .2s ease;
     cursor: pointer;
